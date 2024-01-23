@@ -25,18 +25,12 @@ public class SelectCity implements Task {
 
         actor.attemptsTo(
                 Click.on(SELECT_CITY_INPUT),
-                WaitUntil.the(SELECT_CITY, isVisible())
-        );
-
-        actor.attemptsTo(
+                WaitUntil.the(SELECT_CITY, isVisible()),
                 Click.on(SELECT_CITY),
-                WaitUntil.the(CONTINUE_BUTTON, isVisible())
+                WaitUntil.the(CONTINUE_BUTTON, isVisible()),
+                Click.on(CONTINUE_BUTTON),
+                WaitUntil.the(BILLBOARD_TITLE, isVisible()).forNoMoreThan(20).seconds()
         );
-
-        actor.attemptsTo(
-                Click.on(CONTINUE_BUTTON));
-
-        WaitUntil.the(BILLBOARD_TITLE, isVisible()).forNoMoreThan(20).seconds();
     }
 }
 
