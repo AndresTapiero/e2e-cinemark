@@ -33,8 +33,8 @@ public class RegisterForm implements Task {
                 Enter.theValue(NAME.getValue()).into(NAME_INPUT),
                 Click.on(LAST_NAME_INPUT),
                 Enter.theValue(LAST_NAME.getValue()).into(LAST_NAME_INPUT),
-                Click.on(EMAIL_INPUT),
-                Enter.theValue(EMAIL.getValue()).into(EMAIL_INPUT),
+                Click.on(CREATE_EMAIL_INPUT),
+                Enter.theValue(EMAIL.getValue()).into(CREATE_EMAIL_INPUT),
                 Click.on(CONFIRM_EMAIL_INPUT),
                 Enter.theValue(EMAIL.getValue()).into(CONFIRM_EMAIL_INPUT),
                 Click.on(PHONE_INPUT),
@@ -56,8 +56,8 @@ public class RegisterForm implements Task {
         actor.attemptsTo(
                 Click.on(PREFER_THEATER_INPUT),
                 Click.on(THEATER_MULTIPLAZA),
-                Click.on(PASSWORD_INPUT),
-                Enter.theValue(PASSWORD.getValue()).into(PASSWORD_INPUT),
+                Click.on(CREATE_PASSWORD_INPUT),
+                Enter.theValue(PASSWORD.getValue()).into(CREATE_PASSWORD_INPUT),
                 Click.on(TERM_AND_CONDITIONS),
                 Click.on(CONTINUE_REGISTER_BUTTON)
         );

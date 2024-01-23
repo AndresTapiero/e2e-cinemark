@@ -19,7 +19,6 @@ public class RegisterStepDefinitions {
         createAccount();
     }
 
-
     @Step
     private void selectProfile() {
 
@@ -38,12 +37,12 @@ public class RegisterStepDefinitions {
 
     }
 
+    @Step("create account")
     private void createAccount(){
         theActorInTheSpotlight().attemptsTo(
                 RegisterForm.fill()
         );
     }
-
 
     @Then("see the billboard view")
     public void seeScreen() {
