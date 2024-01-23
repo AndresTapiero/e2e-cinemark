@@ -1,6 +1,8 @@
 package com.andrest.steps;
 
+import com.andrest.tasks.LoginForm;
 import com.andrest.tasks.SelectCity;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,7 +26,14 @@ public class SearchMovieStepDefinition {
     //selectMovie();
     }
 
-    @Step
+    @And("log in with correct credentials")
+    public void login() {
+        theActorInTheSpotlight().attemptsTo(
+                LoginForm.fill()
+        );
+    }
+
+    @Step("close location view")
     private void closeLocationView(Actor actor) {
         actor.attemptsTo(
                 WaitUntil.the(CLOSE_LOCATION_BUTTON, isVisible()).forNoMoreThan(10).seconds()
@@ -35,7 +44,7 @@ public class SearchMovieStepDefinition {
         );
     }
 
-    @Step
+    @Step("Select city")
     private void selectCity() {
         theActorInTheSpotlight().attemptsTo(
                 SelectCity.andSelectBogota()
@@ -43,15 +52,18 @@ public class SearchMovieStepDefinition {
     }
 
 
-    private void selectMovie(){
+    @When("select a movie")
+    public void selectMovie() {
+
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(BILLBOARD_TITLE, isVisible()).forNoMoreThan(20).seconds(),
                 Click.on(FIRST_MOVIE)
         );
 
 
         theActorInTheSpotlight().attemptsTo(
-                Click.on(SELECT_HOUR),
-                WaitUntil.the(EMAIL_INPUT, isVisible())
+                Click.on(SELECT_HOUR)
+
         );
     }
 
