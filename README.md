@@ -54,7 +54,7 @@ The project structure is organized as follows:
         |-- resources
             |-- features
             |   |-- create_booking.feature
-            |   |-- search_accommodations.feature
+            |   |-- create_user.feature
 
 ```
 
