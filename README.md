@@ -48,9 +48,11 @@ The project structure is organized as follows:
         |           |   |-- RegisterForm.java
         |           |   |-- SelectCity.java
         |           |   |-- SelectMovie.java
+        |           |   |-- SelectCreditCardSaved.java
         |           |-- utils
         |               |-- ScrollUtils.java
         |               |-- Constants.java
+        |               |-- Wait.java
         |-- resources
             |-- features
             |   |-- create_booking.feature
