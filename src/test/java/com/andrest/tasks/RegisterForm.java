@@ -30,29 +30,26 @@ public class RegisterForm implements Task {
         );
 
         actor.attemptsTo(
-                Enter.theValue(NAME.getValue()).into(NAME_INPUT),
+                Enter.theValue(NEW_NAME.getValue()).into(NAME_INPUT),
                 Click.on(LAST_NAME_INPUT),
                 Enter.theValue(LAST_NAME.getValue()).into(LAST_NAME_INPUT),
                 Click.on(CREATE_EMAIL_INPUT),
-                Enter.theValue(EMAIL.getValue()).into(CREATE_EMAIL_INPUT),
+                Enter.theValue(NEW_EMAIL.getValue()).into(CREATE_EMAIL_INPUT),
                 Click.on(CONFIRM_EMAIL_INPUT),
-                Enter.theValue(EMAIL.getValue()).into(CONFIRM_EMAIL_INPUT),
+                Enter.theValue(NEW_EMAIL.getValue()).into(CONFIRM_EMAIL_INPUT),
                 Click.on(PHONE_INPUT),
-                Enter.theValue("3182123123").into(PHONE_INPUT),
+                Enter.theValue(PHONE.getValue()).into(PHONE_INPUT),
                 Click.on(ADDRESS_INPUT),
-                Enter.theValue("Calle 134 # 12-98").into(ADDRESS_INPUT),
+                Enter.theValue(ADDRESS.getValue()).into(ADDRESS_INPUT),
 
                 Click.on(BIRTHDATE_INPUT),
                 Click.on(SELECT_YEAR_OPTION),
                 Click.on(SELECT_YEAR),
                 Click.on(ACCEPT_BIRTHDATE),
                 Click.on(DOCUMENT_NUMBER_INPUT),
-                Enter.theValue("10451785").into(DOCUMENT_NUMBER_INPUT)
+                Enter.theValue(DOCUMENT_NUMBER.getValue()).into(DOCUMENT_NUMBER_INPUT)
         );
-
         ScrollUtils.scrollToElementWithText(actor, "Los campos");
-
-
         actor.attemptsTo(
                 Click.on(PREFER_THEATER_INPUT),
                 Click.on(THEATER_MULTIPLAZA),
@@ -61,7 +58,5 @@ public class RegisterForm implements Task {
                 Click.on(TERM_AND_CONDITIONS),
                 Click.on(CONTINUE_REGISTER_BUTTON)
         );
-
     }
-
 }

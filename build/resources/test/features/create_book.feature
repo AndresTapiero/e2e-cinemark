@@ -7,4 +7,3 @@ Feature: Create book
     When select a movie
     And add the payment method
     Then can see the billboard view
-

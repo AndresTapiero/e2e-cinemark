@@ -35,7 +35,7 @@ public class LoginForm implements Task {
         );
         actor.attemptsTo(
                 Click.on(EMAIL_INPUT),
-                Enter.theValue(EMAIL.getValue()).into(EMAIL_INPUT),
+                Enter.keyValues(EMAIL.getValue()).into(EMAIL_INPUT),
                 Click.on(PASSWORD_INPUT),
                 Enter.theValue(PASSWORD.getValue()).into(PASSWORD_INPUT),
                 Click.on(LOGIN_BUTTON)

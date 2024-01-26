@@ -25,11 +25,12 @@ public class BillingForm implements Task {
         actor.attemptsTo(
                 WaitUntil.the(CREDIT_CARD_BUTTON, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(CREDIT_CARD_BUTTON),
-                WaitUntil.the(TITLE_CARDS, isVisible()).forNoMoreThan(10).seconds(),
 
-
+                WaitUntil.the(WANT_TO_SAVE, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(CARD_NAME_INPUT),
                 Enter.theValue(CARD_NAME.getValue()).into(CARD_NAME_INPUT),
+
+                WaitUntil.the(CARD_NUMBER_INPUT, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(CARD_NUMBER_INPUT),
                 Enter.theValue(CARD_NUMBER.getValue()).into(CARD_NUMBER_INPUT),
 
@@ -38,14 +39,12 @@ public class BillingForm implements Task {
 
                 Click.on(CARD_CVV_INPUT),
                 Enter.theValue(CVV.getValue()).into(CARD_CVV_INPUT),
-
-
                 Click.on(PAY_BUTTON)
 
         );
 
         actor.attemptsTo(
-                WaitUntil.the(PAGE_RESUME, isVisible()).forNoMoreThan(10).seconds(),
+                WaitUntil.the(PAGE_RESUME, isVisible()).forNoMoreThan(30).seconds(),
                 WaitUntil.the(QR_CODE, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(BUTTON_FINISH)
         );
